@@ -22,6 +22,7 @@ export const Hero = styled.div`
  animation-name: ${HeaderKeyFrame};
   animation-duration: 20s;
   background-size: 120% 100%;
+  min-height: 90vh;
   animation-iteration-count: infinite;
   background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
     
@@ -32,11 +33,11 @@ export const Hero = styled.div`
 
 export const Layer = styled.div`
 
-  background: rgba(188, 170, 164,0.3);
+  background: rgba(188, 170, 164,0.1);
   overflow: hidden;
   height: 100%;
   z-index: 2;
-
+  min-height: 90vh;
   @media ${device.md} {
     min-height: 90vh;
   }
@@ -57,20 +58,20 @@ export const Limiter = styled.div`
 `;
 
 export const TitlesContainer = styled.div`
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   .titles {
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     .title {
       color: #ffff;
-      font-size: 40px;
+      font-size: 45px;
       font-weight: lighter;
       margin: 0;
       @media ${device.md} {
@@ -86,8 +87,9 @@ export const TitlesContainer = styled.div`
       }
     }
     .subtitle {
-      color: #bbbcc2;
+      color: #fff;
       font-size: 20px;
+      margin-bottom: 10px;
     }
   }
 

@@ -12,7 +12,7 @@ export default function habitacion() {
   
   return (
     <div>
-      <p>router</p>
+      <p>habitaciones</p>
     </div>
   )
 }

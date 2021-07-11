@@ -2,6 +2,7 @@ import { Box, Link, Menu, MenuItem } from "@material-ui/core";
 import {
   AccountCircle,
   ChatBubble,
+  HomeWork,
   Notifications,
   PermIdentity,
   WorkOutline,
@@ -47,23 +48,21 @@ function NavBarProfile({ isHome }) {
   return (
     <Nav isHome={isHome}>
       <Wrapper>
-      <Link href="/">
-      <Logo>
-          <WorkOutline
-            style={{ color: colors.primaryColor,  fontSize: 50}}
-          />
-          <p
-            style={{
-              color:'#000',
-              marginLeft: 10,
-              fontWeight: "bold",
-              fontSize: 25,
-            }}
-          >
-            CVJOBS
-          </p>
-        </Logo>
-      </Link>
+        <Link href="/">
+          <Logo>
+            <HomeWork style={{ color: "#F0720A", fontSize: 60 }} />
+            <p
+              style={{
+                color: "#000",
+                marginLeft: 10,
+                fontWeight: "bold",
+                fontSize: 25,
+              }}
+            >
+              Hotel Magic Moon
+            </p>
+          </Logo>
+        </Link>
         <div>
           <StyledBurger open={openMenu} onClick={() => toggleMenu()}>
             <div />
@@ -77,35 +76,26 @@ function NavBarProfile({ isHome }) {
             <Link href="/" style={{ textDecoration: "none" }}>
               <FlexRow>
                 <A isHome={isHome}>Inicio</A>
-                <RowWithColor />                
               </FlexRow>
             </Link>
-            <Link href="/job" style={{ textDecoration: "none" }}>
-              <FlexRow>                
-                <A isHome={isHome}>Estoy buscando empleo</A>
-                <RowWithColor />
-              </FlexRow>
-            </Link>
-            <Link href="/soyempresa" style={{ textDecoration: "none" }}>
+
+            <Link href="/habitaciones" style={{ textDecoration: "none" }}>
               <FlexRow>
-                <A isHome={isHome}>Reclutadores</A>
-                <RowWithColor />
+                <A isHome={isHome}>Habitaciones</A>
               </FlexRow>
             </Link>
-            <Link href="/job" style={{ textDecoration: "none" }}>
+            <Link href="/misreservaciones" style={{ textDecoration: "none" }}>
               <FlexRow>
-                <A isHome={isHome}>Blog</A>
-                <RowWithColor />
+                <A isHome={isHome}>Mis Reservaciones</A>
               </FlexRow>
-            </Link>         
-            <Link href="/job" style={{ textDecoration: "none" }}>
+            </Link>
+            <Link href="/contacto" style={{ textDecoration: "none" }}>
               <FlexRow>
                 <A isHome={isHome}>Contacto</A>
-                <RowWithColor />
               </FlexRow>
             </Link>
           </LinksCtn>
-          <LoginCtn>
+          {/*           <LoginCtn>
             {isLogeed ? (
               <MenuProfile>
                 <Box>
@@ -170,7 +160,7 @@ function NavBarProfile({ isHome }) {
                 </Link>
               </ButttonSigup>
             )}
-          </LoginCtn>
+          </LoginCtn> */}
         </Links>
       </Wrapper>
 

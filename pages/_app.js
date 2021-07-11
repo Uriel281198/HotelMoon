@@ -5,20 +5,21 @@ import { ThemeProvider } from "styled-components";
 import AppWrapper from "../context/loginContext";
 import { createMuiTheme } from "@material-ui/core";
 import { green, purple } from "@material-ui/core/colors";
+import UserWrapper from "../context/userContext";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#37D09C',
-      main: '#37D09C',
-      dark: '#37D09C',
-      contrastText: '#fff',
+      light: "#37D09C",
+      main: "#37D09C",
+      dark: "#37D09C",
+      contrastText: "#fff",
     },
     secondary: {
-      light: '#ff7961',
-      main: '#23c0e9',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: "#ff7961",
+      main: "#23c0e9",
+      dark: "#ba000d",
+      contrastText: "#000",
     },
   },
 });
@@ -33,11 +34,11 @@ export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <AppWrapper>
+      <UserWrapper>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>
-      </AppWrapper>
+      </UserWrapper>
     );
   }
 }

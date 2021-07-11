@@ -41,7 +41,7 @@ function NavBar({ isHome }) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {    
+  const handleClose = () => {
     setAnchorEl(null);
   };
 
@@ -49,9 +49,7 @@ function NavBar({ isHome }) {
     <Nav isHome={isHome}>
       <Wrapper>
         <Logo>
-          <HomeWork
-            style={{ color: '#F0720A', fontSize: 60 }}
-          />
+          <HomeWork style={{ color: "#F0720A", fontSize: 60 }} />
           <p
             style={{
               color: isHome ? "#ffff" : "#ffff",
@@ -60,7 +58,7 @@ function NavBar({ isHome }) {
               fontSize: 25,
             }}
           >
-            Hotel Magic Monn
+            HMM
           </p>
         </Logo>
         <div>
@@ -76,34 +74,49 @@ function NavBar({ isHome }) {
             <Link href="/" style={{ textDecoration: "none" }}>
               <FlexRow>
                 <A isHome={isHome}>Inicio</A>
-                    
               </FlexRow>
             </Link>
-            <Link href="/job" style={{ textDecoration: "none" }}>
-              <FlexRow>                
-                <A isHome={isHome}></A>
-               
-              </FlexRow>
-            </Link>
-            <Link href="/soyempresa" style={{ textDecoration: "none" }}>
+            <Link href="/habitaciones" style={{ textDecoration: "none" }}>
               <FlexRow>
                 <A isHome={isHome}>Habitaciones</A>
-               
               </FlexRow>
             </Link>
-            <Link href="/job" style={{ textDecoration: "none" }}>
+            <Link href="/misreservaciones" style={{ textDecoration: "none" }}>
               <FlexRow>
-                <A isHome={isHome}>Reservaciones</A>
-                
+                <A isHome={isHome}>Restaurantes</A>
               </FlexRow>
             </Link>
-            <Link href="/job" style={{ textDecoration: "none" }}>
+            <Link href="/contacto" style={{ textDecoration: "none" }}>
               <FlexRow>
                 <A isHome={isHome}>Contacto</A>
-               
               </FlexRow>
             </Link>
           </LinksCtn>
+          <LoginCtn>
+            {isLogeed ? (
+              <MenuProfile>
+                <Box className="div">
+                  <p>Mis Reservaciones</p>
+                </Box>
+                <Box></Box>
+                <Box></Box>
+              </MenuProfile>
+            ) : (
+              <ButtonLogin>
+                <PermIdentity style={{ color: "#ffff" }} />
+                <Link href="/iniciosesion">
+                  <LoginButton>LOGIN</LoginButton>
+                </Link>
+              </ButtonLogin>
+            )}
+            {!isLogeed && (
+              <ButttonSigup>
+                <Link href="/job">
+                  <A isHome={isHome}>CREAR CUENTA</A>
+                </Link>
+              </ButttonSigup>
+            )}
+          </LoginCtn>
         </Links>
       </Wrapper>
 

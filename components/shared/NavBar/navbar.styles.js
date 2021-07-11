@@ -7,10 +7,11 @@ export const Nav = styled.nav`
   width: 100%;
   margin: auto;
   display: flex;
-  background-color: ${(props) => (props.isHome ? "transparent" : colors.primaryColor)};
+  background-color: ${(props) =>
+    props.isHome ? "transparent" : colors.primaryColor};
   /* border: 1px solid #b2dfdb; */
   align-items: center;
-  
+
   /* border: 1px solid blue; */
 `;
 
@@ -51,7 +52,6 @@ export const ButtonLogin = styled.div`
   border-radius: 5px;
 `;
 
-
 export const RowWithColor = styled(ArrowDropDown)`
   color: ${colors.primaryColor};
 `;
@@ -63,7 +63,6 @@ export const DrawerNavigation = styled.div`
   background-color: #ffff;
   position: fixed;
   z-index: 10;
-  border: 1px solid red;
 
   display: flex;
   flex-direction: column;
@@ -85,7 +84,6 @@ export const DrawerNavigation = styled.div`
 
 export const LoginCtn = styled.div`
   margin-left: 30px;
-  border-left: 2px solid gray;
   padding-left: 10px;
   display: flex;
   align-items: center;
@@ -138,8 +136,8 @@ export const LinksCtn = styled.div`
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 5%;
-  right: 2rem;
+  top: 7%;
+  right: 1.1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -163,7 +161,7 @@ export const StyledBurger = styled.button`
     width: 2rem;
     height: 0.25rem;
     /* background: ${({ open }) => (open ? "#EFFFFA" : "#EFFFFA")}; */
-    background-color: #000;
+    background-color: #fff;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -194,21 +192,26 @@ export const MenuProfile = styled.div`
   /* padding-right: 20px; */
   /* padding-left: 20px; */
   border-radius: 5px;
-  .first{
-    color:#ffff;    
-    margin-left:20px;
+  .first {
+    color: #ffff;
+    margin-left: 20px;
   }
-  .icon{
-    color:#ffff;    
-    margin-right:20px;
+  .icon {
+    color: #ffff;
+    margin-right: 20px;
+  }
+  .div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
   }
 `;
-
 
 export const ButttonSigup = styled.div``;
 
 export const MenuOption = styled.div`
-  border: 1px solid white;
   position: absolute;
   top: 0;
   margin-top: 40px;
