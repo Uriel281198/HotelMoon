@@ -56,7 +56,7 @@ export const RowWithColor = styled(ArrowDropDown)`
   color: ${colors.primaryColor};
 `;
 export const DrawerNavigation = styled.div`
-  width: 320px;
+  width: 270px;
   padding: 20px;
   padding-top: 100px;
   height: 100vh;
@@ -78,7 +78,8 @@ export const DrawerNavigation = styled.div`
     display: none;
   }
   p {
-    color: red;
+    color: #757575;
+    margin-bottom: 20px;
   }
 `;
 
@@ -134,9 +135,10 @@ export const LinksCtn = styled.div`
   }
 `;
 
+
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 7%;
+  top: 3%;
   right: 1.1rem;
   display: flex;
   flex-direction: column;

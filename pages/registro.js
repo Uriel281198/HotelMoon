@@ -32,9 +32,9 @@ export default function registro() {
     username: "uriel0550 ",
     name: "Uriel",
     lastname: "Arriaga",
-    email: "urie_sic@@tesco.edu.mx",
-    password: "uri123",
-    passwordConfirmation: "uri123",
+    email: "urie_sic@tesco.edu.mx",
+    password: "uri12345",
+    passwordConfirmation: "uri12345",
   };
 
   const {
@@ -75,10 +75,10 @@ export default function registro() {
     setLoading(true);
     try {
       let userResponse = await api.post("users", payload);
-
       RegisterUser(userResponse);
       router.push("/");
       setLoading(false);
+
     } catch (error) {
       console.log(error);
       if (error.response != undefined) {

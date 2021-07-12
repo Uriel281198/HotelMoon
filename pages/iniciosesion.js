@@ -270,7 +270,7 @@ export default function registro() {
                 </strong>
               </Alert>
             )}
-            {viewReset ? <RenderResetPassword /> : <RenderForm />}
+            <RenderForm />
           </InputsContainer>
         </Wrapper>
       </Hero>

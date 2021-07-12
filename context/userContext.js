@@ -26,7 +26,6 @@ const UserWrapper = ({ children }) => {
     id_user: null,
     isLogged_User: false,
     isLoading: true,
-    id_candidate: null,
     userData: null,
     photo: null,
   };
@@ -62,7 +61,6 @@ const UserWrapper = ({ children }) => {
         });
       } catch (error) {
         console.log(error);
-        ß;
       }
     } else {
       console.log("no local");
@@ -85,27 +83,7 @@ const UserWrapper = ({ children }) => {
     console.log("login user");
 
     const { objectId, sessionToken, name, lastname, email, username } = payload;
-
-    let query = JSON.stringify({
-      user: {
-        __type: "Pointer",
-        className: "_User",
-        objectId: objectId,
-      },
-    });
-
-    let candidate = await api.get(
-      `classes/Candidates?where=${query}&include=entity&include=city&include=user`
-    );
-    let candidateData = candidate.data.results[0];
-
-    candidateData.name = name;
-    candidateData.lastname = lastname;
-    candidateData.email = email;
-    candidateData.username = username;
-
-    console.log(candidateData);
-
+    
     try {
       if (sessionToken) {
         console.log("got token user");
@@ -119,7 +97,7 @@ const UserWrapper = ({ children }) => {
             isUser: true,
             isLogged_User: true,
             isLoading: false,
-            userData: candidateData,
+            userData: payload,
           },
         });
       }
@@ -132,12 +110,12 @@ const UserWrapper = ({ children }) => {
     console.log(payload);
 
     try {
-      if (payload.sessionToken) {
+      if (payload.data.sessionToken) {
         console.log("got token user");
-        Cookies.set("token_user", payload.sessionToken, { expires: 60 });
-        Cookies.set("id_user", payload.objectId, { expires: 60 });
+        Cookies.set("token_user", payload.data.sessionToken, { expires: 60 });
+        Cookies.set("id_user", payload.data.objectId, { expires: 60 });
         api.defaults.headers.common["X-Parse-Session-Token"] =
-          payload.sessionToken;
+          payload.data.sessionToken;
 
         let userValid = await api.get(`users/me`);
         const { objectId, sessionToken, name, lastname, email, username } =
@@ -151,7 +129,7 @@ const UserWrapper = ({ children }) => {
             id_user: objectId,
             isLogged_User: true,
             isLoading: false,
-            userData: userValid.data,
+            userData: payload.data,
           },
         });
       }

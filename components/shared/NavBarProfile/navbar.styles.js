@@ -58,14 +58,13 @@ export const RowWithColor = styled(ArrowDropDown)`
   color: ${colors.primaryColor};
 `;
 export const DrawerNavigation = styled.div`
-  width: 320px;
+    width: 270px;
   padding: 20px;
   padding-top: 100px;
   height: 100vh;
   background-color: #ffff;
   position: fixed;
   z-index: 10;
-  border: 1px solid red;
 
   display: flex;
   flex-direction: column;
@@ -81,7 +80,8 @@ export const DrawerNavigation = styled.div`
     display: none;
   }
   p {
-    color: red;
+    color: #757575;
+    margin-bottom: 20px;
   }
 `;
 
@@ -178,7 +178,7 @@ export const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: #EFFFFA;
+    background: #000;
     /* background-color: #000; */
     border-radius: 10px;
     transition: all 0.3s linear;
