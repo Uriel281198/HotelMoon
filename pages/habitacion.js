@@ -74,11 +74,17 @@ export default function habitacion() {
     settotal(res * dataHabitacion.precio);
     return res;
   };
+
   return (
     <div>
       <NavBarProfile />
       <Layout>
-        <Container>
+        <Container
+          onClick={() => {
+            console.log("conexion de base de datos exitosa");
+            console.log(dataHabitacion);
+          }}
+        >
           <Grid container style={{ marginTop: 30 }} spacing={2}>
             <Grid item xs={12} md={6}>
               <img src={images[0]} />
@@ -224,10 +230,12 @@ export default function habitacion() {
                     alert("completa todo los campos");
                   } else {
                     sendData();
-                  } /* handleClose(); */
+                    handleClose();
+                    ViewFilter();
+                  } /*  */
                   /*                   calculateDate();
                    */
-                  /*                   ViewFilter();
+                  /*
                    */
                 }}
                 color="primary"

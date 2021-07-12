@@ -29,12 +29,12 @@ export default function registro() {
   const router = useRouter();
 
   const defaultValues = {
-    username: "osvaldirii0550 ",
-    name: "Osvaldo",
-    lastname: "Piñon",
-    email: "osvaldo123@gmail.com",
-    password: "medicalbuy123",
-    passwordConfirmation: "medicalbuy123",
+    username: "uriel0550 ",
+    name: "Uriel",
+    lastname: "Arriaga",
+    email: "urie_sic@@tesco.edu.mx",
+    password: "uri123",
+    passwordConfirmation: "uri123",
   };
 
   const {
@@ -262,8 +262,6 @@ export default function registro() {
                   "matchesPreviousPassword" && <ShowAlert name="No match" />}
             </InputContainer>
           </Grid>
-
-          <buttton onClick={() => console.log(errors)}>errores</buttton>
         </Grid>
 
         <Box className="">
@@ -292,10 +290,7 @@ export default function registro() {
         <Wrapper>
           <InputsContainer>
             <Box className="register_title">
-              <p>
-                Registrate en <span className="resalt">CVJOBS</span> y empieza a
-                postularte
-              </p>
+              <p>Registrate en Hotel Magic Moon</p>
             </Box>
             {error.error && (
               <Alert severity="error">
