@@ -6,7 +6,6 @@ export const Container = styled.div`
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
- 
 `;
 
 export const Hero = styled.div`
@@ -16,7 +15,7 @@ export const Hero = styled.div`
 export const Wrapper = styled.div`
   max-width: 1300px;
   margin: auto;
-  height: 120vh;
+  height: 140vh;
   padding: 20px;
 `;
 
@@ -26,7 +25,8 @@ export const InputsContainer = styled.div`
   max-width: 700px;
   margin: auto;
   background-color: white;
-  margin-top: 80px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-top: 30px;
   padding: 35px 15px 35px 15px;
   .register_title {
     text-align: center;
@@ -145,14 +145,14 @@ export const InputContainer = styled.div`
     }
   }
   input {
-    /* background-color: #f5f5f5; */
     width: 100%;
     height: 50px;
     border: none;
     padding-left: 15px;
     padding-right: 15px;
     color: #535864;
-    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    border: 1px solid ${colors.primaryColor};
     /* margin-bottom: 40px; */
     &:focus {
       outline: none;

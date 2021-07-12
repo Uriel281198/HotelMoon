@@ -17,6 +17,7 @@ import { normalizeUser } from "../utils/methods";
 import { api } from "../services/api";
 import { userContext } from "../context/userContext";
 import { Alert, AlertTitle } from "@material-ui/lab";
+import NavBarProfile from "../components/shared/NavBarProfile";
 
 export default function registro() {
   const { RegisterUser } = useContext(userContext);
@@ -43,7 +44,7 @@ export default function registro() {
     reset,
     getValues,
     formState: { errors },
-  } = useForm({ defaultValues });
+  } = useForm();
 
   const resetForm = () => {
     reset({
@@ -78,7 +79,6 @@ export default function registro() {
       RegisterUser(userResponse);
       router.push("/");
       setLoading(false);
-
     } catch (error) {
       console.log(error);
       if (error.response != undefined) {
@@ -184,7 +184,7 @@ export default function registro() {
             </InputContainer>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <InputContainer>
               <label>Contraseña</label>
               <Box display="flex" position="relative">
@@ -221,7 +221,7 @@ export default function registro() {
             </InputContainer>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <InputContainer>
               <label>Confirmar Contraseña</label>
               <Box display="flex" position="relative">
@@ -275,7 +275,6 @@ export default function registro() {
             </button>
           )}
         </Box>
-
         <p className="nohave_account" onClick={() => goToLogin()}>
           Ya tienes una cuenta <span>Inicia sesion aqui</span>
         </p>
@@ -286,14 +285,14 @@ export default function registro() {
   return (
     <Container>
       <Hero>
-        <NavBar isHome={true} />
+        <NavBarProfile isHome={true} />
         <Wrapper>
           <InputsContainer>
             <Box className="register_title">
-              <p>Registrate en Hotel Magic Moon</p>
+              <p>Registro</p>
             </Box>
             {error.error && (
-              <Alert severity="error">
+              <Alert variant="filled" severity="error">
                 <AlertTitle>Ups! </AlertTitle>
                 {error.msg},
                 <strong style={{ marginLeft: 2 }}>Intentalo nuevamente</strong>
